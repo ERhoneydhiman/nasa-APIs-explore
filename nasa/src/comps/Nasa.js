@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
 
-const API_KEY = "Ishgh3iyWCqJM7dwzSDkJdm2hMomGX8zyUzouYi5";
+const key = process.env.REACT_APP_key;
 
 function Nasa() {
     const [title, setTitle] = useState('title')
     const [path, setPath] = useState()
     const [desc, setDesc] = useState()
         useEffect(() => {
-            const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+            const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
 
 
             const fetchData = async () => {
