@@ -28,11 +28,13 @@ function Nasa() {
                 setDesc(data.explanation)
                 setDateError('')
             } catch (error) {
-                setDateError('error in date !!!')
+                setDateError('*error in date !!!')
             }
         };
 
         if (date) {
+            fetchData();
+        }else{
             fetchData();
         }
 
