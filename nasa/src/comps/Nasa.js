@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Search from './Search';
+import Footer from './Footer';
 
 
 
 const key = process.env.REACT_APP_key;
 
 function Nasa() {
-    const [dateError, setDateError] = useState('')
+    const [info, setInfo] = useState("Today")
+    const [dateError, setDateError] = useState()
     const [date, setDate] = useState('')
     const [title, setTitle] = useState('title')
     const [path, setPath] = useState()
@@ -27,6 +29,9 @@ function Nasa() {
                 setPath(data.url)
                 setDesc(data.explanation)
                 setDateError('')
+                setInfo(data.date)
+
+
             } catch (error) {
                 setDateError('*error in date !!!')
             }
@@ -34,7 +39,7 @@ function Nasa() {
 
         if (date) {
             fetchData();
-        }else{
+        } else {
             fetchData();
         }
 
@@ -48,11 +53,34 @@ function Nasa() {
 
     return (
         <div>
-            <Search onDateChange={handleDateChange} />
-            <p>{dateError}</p>
-            <h1>{title}</h1>
-            <img src={path} alt="foto" />
-            <p>{desc}</p>
+
+            <header>
+                <img src="imgs/logo.png" alt="logoo" />
+                <div className="header-text">
+                    <h1>Astronomy Picture of the Day</h1>
+                    <p>Fetched from NASA's API</p>
+                </div>
+            </header>
+
+            <div className="info">
+                <p>{info}'s  Picture  and  Fact</p>
+            </div>
+
+            <div className="main">
+                <img src={path} alt="foto" />
+                <div className="one">
+                    <h1>{title}</h1>
+                    <p>{desc}</p>
+                </div>
+            </div>
+
+            <div className="handle-date">
+                <p>Change Date to See Another picture and Fact</p>
+                <p>{dateError}</p>
+                <Search onDateChange={handleDateChange} />
+            </div>
+
+            <Footer />
         </div>
     )
 }

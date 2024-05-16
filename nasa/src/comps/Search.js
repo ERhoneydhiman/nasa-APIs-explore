@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react'
 function Search({ onDateChange }) {
     const [date, setDate] = useState('')
     useEffect(() => {
-        // Get today's date
         const today = new Date();
-        // Format the date to YYYY-MM-DD
         const formattedDate = today.toISOString().split('T')[0];
         setDate(formattedDate);
     }, []);
@@ -22,7 +20,7 @@ function Search({ onDateChange }) {
         }
     };
     return (
-        <div>
+        <div className='search'>
             
             <input
                 onChange={handleDate}
