@@ -78,6 +78,7 @@ header img {
 
 .main img {
     width: 35%;
+    min-height: 30vh;
     border-radius: 50px;
     border: 8px solid #ffffff;
     margin: 7vh 0 7vh 7vw;
@@ -135,7 +136,7 @@ header img {
 
 .footer {
     width: 100%;
-    border-radius: 50px 200px 0 0 ;
+    border-radius: 50px 200px 0 0;
     background-color: #071522b7;
     /* background-color: red; */
     display: flex;

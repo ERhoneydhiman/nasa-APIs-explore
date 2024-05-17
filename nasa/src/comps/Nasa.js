@@ -12,7 +12,7 @@ function Nasa() {
     const [date, setDate] = useState('')
     const [title, setTitle] = useState('title')
     const [path, setPath] = useState()
-    const [desc, setDesc] = useState()
+    const [desc, setDesc] = useState('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores sint expedita natus repellat ratione omnis soluta possimus dolores iste dignissimos nesciunt illo id ab beatae quia consequatur, quos vel optio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint non provident illum doloremque illo cumque vero. Ratione modi quod debitis, velit minus similique. Adipisci totam molestiae sed modi error?')
     useEffect(() => {
         const API_URL = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${key}`;
 
@@ -79,6 +79,8 @@ function Nasa() {
                 <p>{dateError}</p>
                 <Search onDateChange={handleDateChange} />
             </div>
+
+            
 
             <Footer />
         </div>
